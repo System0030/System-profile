@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery</title>
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body>
+  <header>
+    <h1>Gallery</h1>
+  </header>
+
+  <section class="upload-section">
+    <h2>Upload New Image</h2>
+    <form id="uploadForm">
+      <input type="file" id="imageInput" accept="image/*" required>
+      <input type="text" id="descInput" placeholder="Enter image description" required>
+      <button type="submit">Upload</button>
+    </form>
+  </section>
+
+  <section class="gallery">
+    <!-- Image cards will be appended here -->
+  </section>
+
+  <!-- Template for a gallery card -->
+  <template id="cardTemplate">
+    <div class="card">
+      <img src="" alt="Gallery Image">
+      <div class="card-content">
+        <p class="description"></p>
+        <button class="edit-btn">Edit</button>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    const uploadForm = document.getElementById('uploadForm');
+    const imageInput = document.getElementById('imageInput');
+    const descInput = document.getElementById('descInput');
+    const gallery = document.querySelector('.gallery');
+    const cardTemplate = document.getElementById('cardTemplate').content;
+
+    // Simulated uploaded images array.
+    // In a real scenario, you would load this list from a server.
+    let uploadedImages = [];
+
+    // Helper to render the gallery
+    function renderGallery() {
+      gallery.innerHTML = '';
+      uploadedImages.forEach((item, index) => {
+        const cardClone = document.importNode(cardTemplate, true);
+        const imgEl = cardClone.querySelector('img');
+        const descEl = cardClone.querySelector('.description');
+        const editBtn = cardClone.querySelector('.edit-btn');
+
+        imgEl.src = item.url;
+        imgEl.alt = item.desc;
+        descEl.textContent = item.desc;
+
+        // Inline editing of description
+        editBtn.addEventListener('click', () => {
+          const newDesc = prompt("Edit image description:", item.desc);
+          if(newDesc !== null) {
+            item.desc = newDesc;
+            renderGallery();
+          }
+        });
+
+        gallery.appendChild(cardClone);
+      });
+    }
+
+    // Simulate file upload.
+    // In a real application, you would use AJAX to send the file to the server.
+    uploadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const file = imageInput.files[0];
+      if(file) {
+        // For demo, we simulate the upload by creating a local URL for the image.
+        const imageUrl = URL.createObjectURL(file);
+        const description = descInput.value;
+
+        // In a real scenario, you would send the file to your backend
+        // and the backend would move it to the "Upload" folder.
+        // Here we simply add it to our array.
+        uploadedImages.push({ url: imageUrl, desc: description });
+
+        // Clear inputs
+        uploadForm.reset();
+        renderGallery();
+      }
+    });
+
+    // Initial render (if you have previously saved images, load them here)
+    renderGallery();
+  </script>
+</body>
+</html>

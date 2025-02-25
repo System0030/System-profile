@@ -1,0 +1,127 @@
+/* Basic reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  /* Upload Section */
+  .upload-section {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .upload-section h2 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  #uploadForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  #uploadForm input[type="file"],
+  #uploadForm input[type="text"] {
+    padding: 8px;
+    font-size: 1rem;
+  }
+  
+  #uploadForm button {
+    padding: 10px 20px;
+    background: #e63946;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #uploadForm button:hover {
+    background: #b72f38;
+  }
+  
+  /* Gallery Grid */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Gallery Card */
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card-content p {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .card-content .edit-btn {
+    align-self: flex-end;
+    padding: 5px 10px;
+    background: #333;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .card-content .edit-btn:hover {
+    background: #555;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 480px) {
+    #uploadForm {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  

@@ -1,104 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>System Mikko</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #282c34;
-      color: #61dafb;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    h1 {
-      margin-top: 20px;
-      font-size: 2rem;
-    }
-
-    button {
-      background-color: #61dafb;
-      color: #282c34;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      border-radius: 10px;
-      margin-top: 20px;
-      transition: transform 0.2s, background-color 0.2s;
-    }
-
-    button:hover {
-      background-color: #21a1f1;
-    }
-
-    button:active {
-      transform: scale(0.9);
-    }
-
-    #score {
-      font-size: 1.5rem;
-      margin: 20px 0;
-    }
-
-    #message {
-      font-size: 1.2rem;
-      color: #ffa500;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.5rem;
-      }
-
-      button {
-        font-size: 1.2rem;
-        padding: 10px 20px;
-      }
-
-      #score {
-        font-size: 1.2rem;
-      }
-
-      #message {
-        font-size: 1rem;
-      }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rise Athlete</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Welcome to System Mikko!</h1>
-  <p id="score">Score: 0</p>
-  <button id="clickButton">Click Me!</button>
-  <p id="message"></p>
 
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">BSCS2A</div>
+      <div class="hamburger" id="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="https://www.sti.edu/campuses-details.asp?campus_id=QkxT">Location</a></li>
+        <li><a href="#">-</a></li>
+        <li><a href="#">-</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>This is where you can find all of the BSCS`s History</h1>
+      <p>
+        A place were you can find all of the kupals Gallery and Details about this Person <span>#BSCS</span>.
+      </p>
+      <div class="buttons">
+        <a href="#" class="btn">ABCS</a>
+        <a href="#" class="btn btn-secondary">ABC</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy;<h4>2023-2027 BSCS. All rights reserved.</h4></p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Mobile Menu -->
   <script>
-    let score = 0;
-    const goal = 10;
+    const hamburger = document.getElementById('hamburger-menu');
+    const navLinks = document.getElementById('nav-links');
 
-    const scoreDisplay = document.getElementById('score');
-    const clickButton = document.getElementById('clickButton');
-    const messageDisplay = document.getElementById('message');
-
-    clickButton.addEventListener('click', () => {
-      score++;
-      scoreDisplay.textContent = `Score: ${score}`;
-      clickButton.style.backgroundColor = score % 2 === 0 ? '#4caf50' : '#61dafb'; // Alternate colors
-      if (score >= goal) {
-        messageDisplay.textContent = "🎉 Congratulations! You win! 🎉";
-        clickButton.disabled = true;
-        clickButton.textContent = "Game Over";
-        clickButton.style.backgroundColor = '#d32f2f';
-      }
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
     });
   </script>
+
 </body>
 </html>
