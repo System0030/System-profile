@@ -1,0 +1,271 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #0d0d0d, #1a0000);
+    color: #e0e0e0;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background: rgba(15, 15, 15, 0.95);
+    padding: 15px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid cyan;
+    box-shadow: 0 0 10px cyan;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+}
+
+nav ul li a:hover {
+    color: cyan;
+    border: 1px solid cyan;
+    border-radius: 5px;
+    box-shadow: 0 0 5px cyan;
+}
+
+section {
+    padding: 80px 10%;
+    flex: 1;
+}
+
+h1, h2 {
+    color: #fff;
+    text-shadow: 0 0 5px cyan;
+    margin-bottom: 0px;
+    position: relative;
+}
+
+.red {
+    color: #ff002e;
+}
+
+
+.gallery-section {
+    padding: 50px;
+    width: auto;
+    max-width: 1200px;
+    margin: 0px 5% 0px 5%;
+    
+}
+
+.custom-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 992px) {
+    .custom-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .custom-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.photo-card {
+    background: linear-gradient(45deg, #ff6b6b, #6b73ff, #000000);
+    border: 2px solid black;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    text-align: center;
+}
+
+.GgradientCard {
+    background: linear-gradient(45deg, #ff6b6b, #6b73ff, #000000);
+}
+
+.photo-card:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #2c2c2c, #1a1a1a);
+    color: white;
+}
+
+.photo-card:hover .cardBody {
+    background: #333;
+    color: white;
+}
+
+.cardImg {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.cardBody {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: background 0.3s ease-in-out;
+    color: #000000;
+}
+
+footer {
+    background-color: #0d0d0d;
+    padding: 20px 10px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-links, .footer-socials {
+    flex: 1 1 200px;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.75rem;
+    margin-top: 10px;
+    color: #888;
+}
+
+.footer-icon img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+#invert img {
+    filter: invert(1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 1024px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul {
+        justify-content: center;
+        width: 100%;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 5%;
+    }
+    section {
+        padding: 50px 5%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 0;
+    }
+
+    .footer-links, .footer-socials {
+        flex: 1 1 100%;
+    }
+
+    .footer-icon img {
+        width: 20px;
+        height: 20px;
+    }
+
+    footer {
+        padding: 10px 5px;
+    }
+
+    .footer-bottom {
+        margin-top: 5px;
+    }
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background: cyan;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        margin-left: auto;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+}
+
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+    filter: brightness(50%);
+    opacity: 0.8;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galvez Site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>My<span>Me</span></h1>
+            <div class="hamburger" id="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="hero">
+        <div class="content">
+            <h2>About Me</h2>
+            <br>
+            <p>Hey! I’m Renz Mico Galvez, a BSCS 2A student from STI Balagtas. 
+                I’m not exactly an honor student, but I get things done when I feel like it. 
+                I love playing games, and even though I’m not a foodie, I eat like a pro—basically, 
+                if there’s food, I’m there. I enjoy random trips, hanging out wherever, 
+                as long as it’s not boring. Sometimes I go on dates, sometimes I just chill. 
+                I also like designing stuff—webpages, posters, or even random doodles. 
+                I just do whatever makes me happy… leave the rest to Batman!</p>
+        </div>
+    </section>
+
+
+     <!-- Gallery Section -->
+     <section class="gallery-section" id="gallery">
+        <h2>Gallery</h2>
+        <br>
+        <div class="custom-container">
+            <!-- Card 1 -->
+            <div class="photo-card">
+                <img src="PIC & VID & GIF/Picture1.jpg" alt="Card Image" class="cardImg">
+                <div class="cardBody">
+                    <h3>Leader</h3>
+                    <p>Ang Nag iisang nag simula para lumaki ang Tropa at maging solid</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="photo-card GgradientCard">
+                <img src="PIC & VID & GIF/Picture2.jpg" alt="Card Image" class="cardImg">
+                <div class="cardBody">
+                    <h3>Humble one</h3>
+                    <p>Eto yung part na mag sisimula palang ako uminom HAHAHA</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="photo-card">
+                <img src="PIC & VID & GIF/Picture3.jpg" alt="Card Image" class="cardImg">
+                <div class="cardBody">
+                    <h3>Bored</h3>
+                    <p>Bored nako neto sa Work gusto konang matulog</p>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="photo-card">
+                <img src="PIC & VID & GIF/Picture4.jpg" alt="Card Image" class="cardImg">
+                <div class="cardBody">
+                    <h3>Armando & Ivana</h3>
+                    <p>Eto yung Gumala ako papunta kila Armando</p>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="photo-card">
+                <img src="PIC & VID & GIF/Picture5.jpg" alt="Card Image" class="cardImg">
+                <div class="cardBody">
+                    <h3>Bored #2</h3>
+                    <p>Daming Customer help me</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <p>Basta Project</p>
+        <div class="projects-grid">
+            <div class="card">Project 1</div>
+            <div class="card">Project 2</div>
+            <div class="card">Project 3</div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <p>just a friendly chat!</p>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Left side -->
+            <div class="footer-left">
+                <h3>Extra</h3>
+                <div class="footer-links">
+                    <a href="#about">About me</a> 
+                    <a> | </a>
+                    <a href="#">Contact</a>
+                    <a> | </a>
+                    <a href="#">Secret</a>
+
+                </div>
+            </div>
+    
+            <!-- Right side -->
+            <div class="footer-right">
+                <a href="https://www.instagram.com/mikko0030/" class="footer-icon" id="invert">
+                    <img src="PIC & VID & GIF/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://github.com/System0030" class="footer-icon" id="invert">
+                    <img src="PIC & VID & GIF/github1.png" alt="Github">
+                </a>
+                <a href="https://discord.com/channels/@me" class="footer-icon">
+                    <img src="PIC & VID & GIF/discord1.png" alt="Discord">
+                </a>
+                <a href="https://www.facebook.com/Mikko000030/" class="footer-icon">
+                    <img src="PIC & VID & GIF/facebook-logo.png" alt="Facebook">
+                </a>
+            </div>
+        </div>
+    
+        <!-- Bottom line -->
+        <div class="footer-bottom">
+            <span class="red">Privacy Policy</span> – <span class="red">Terms of Use</span> – &copy; 2025 System. All rights reserved. 
+            <br>Webpage by <span class="red">Renz Mico Galvez</span>
+        </div>
+    </footer>
+
+    <video autoplay muted loop id="bgVideo">
+        <source src="PIC & VID & GIF/Paimon.mp4" type="video/mp4">
+    </video>
+    
+</body>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.querySelector('nav ul');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+</script>
+</html>
